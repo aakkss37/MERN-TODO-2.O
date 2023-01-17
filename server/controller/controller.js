@@ -1,37 +1,30 @@
-import reBuild_ToDo from "../models/todoModule.js";
-const todoArr = [
-	{
-		_id: "skajhdxi827323hei7hd2189dy98d4r",
-		data: "Task 1",
-		createdAt: Date.now(),
-		done: false
-	},
-	{
-		_id: "skajhdxi827323hei7hd21efh834fr",
-		data: "Task 2",
-		createdAt: Date.now(),
-		done: false
-	},
-	{
-		_id: "skajhdxi827323hei7hd21i3u4fdf3",
-		data: "Task 3",
-		createdAt: Date.now(),
-		done: false
-	},
-	{
-		_id: "skajhdxi827323hei7hd3fcj938434j",
-		data: "Task 4",
-		createdAt: Date.now(),
-		done: false
-	},
-]
+import ToDo from "../models/todoModule.js";
+import { v4 as uuidv4 } from 'uuid';
+
 export const getAllTodo = async (request, responce) => {
-	console.log("request comming ---> /todo");
+	console.log("request received ---> /todo");
 	try {
-		const allTodo = await reBuild_ToDo.find({}).sort({"crreatedAt": -1});
+		const allTodo = await ToDo.find({}).sort({"crreatedAt": -1});
 		return responce.status(200).json(allTodo)
 	} catch (error) {
 		console.log("error in fatching allTodo ----> ", error.message);
 		return responce.status(500).json(error.message);
 	};
+}
+
+export const addNewTodo = async(request, responce)=>{
+	console.log("request received ---> /todo/post" );
+	try {
+		const newTodo = await ToDo.create({
+			_id: uuidv4(),
+			data: request.body.data,
+			crreatedAt: Date.now(),
+			done: false
+		});
+		await newTodo.save();
+		return responce.status(200).json(newTodo);
+	} catch (error) {
+		console.log("error in adding newTodo ----> ", error.message);
+		return responce.status(500).json(error.message);
+	}
 }

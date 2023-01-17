@@ -12,7 +12,7 @@ mongoose.set('strictQuery', false);
 
 const mongooseConnention = async()=>{
 
-	const CONNECTION_URL = `mongodb+srv://${USERNAME}:${PASSWORD}@mern-to-do.oro2wus.mongodb.net/?retryWrites=true&w=majority/`;
+	const CONNECTION_URL = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.wbggxjo.mongodb.net/?retryWrites=true&w=majority`;
 	const connectionOptions = {
 		useNewUrlParser: true, useUnifiedTopology: true
 	}
