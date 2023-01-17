@@ -1,16 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
-body *{
-	border: 2px solid white;
+
+body * {
+	/* border: 2px solid white; */
 	margin: 5px;
-	padding: 5px;
-	color: rgb(255, 194, 194);
+	/* padding: 5px; */
+	/* color: rgb(255, 255, 255); */
 	font-family: 'Ubuntu', sans-serif;
 }
 
-.headerContainer{
+.headerContainer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 2rem;
-	font-size: 1.6rem;
+	margin: 3rem;
+	font-size: 2rem;
+	color: rgb(255, 179, 179);
+}
+
+
+.formConatiner{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5rem;
+}
+
+.input{
+	font-size: 1.5rem;
+	width: 650px;
+	border: none;
+	outline: none;
+	background-color: rgb(27, 0, 0);
+	color: rgb(217, 217, 217);
+	border-bottom: 2px solid rgb(255, 194, 194);
+}
+.input::placeholder {
+	color: rgb(180, 180, 180);
+}
+
+.todoContainer{
+	/* border: 2px solid rgb(0, 255, 13); */
+	color: rgb(27, 0, 0);
+	font-weight: 700;
+	margin-top: 5rem;
+	padding: 10px;
+}
+.todoList{
+	margin: auto;
+	max-width: 820px;
+	/* border: 2px solid red; */
+
+}
+
+.todoData{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.4rem;
+	background-color: rgb(255, 179, 179);
+	margin: 10px;
+	border-radius: 5px;
+}
+.action{
+	padding: 2px;
+}
+.icon{
+	margin: 4px;
+	margin-left: 8px;
+	margin-right: 8px;
+	cursor: pointer;
+}
+.icon:hover i{
+	color: rgb(121, 0, 0);
+}
+
+@media screen and (max-width: 820px) {
+	.input {
+		width: 100%;
+		margin-top: 0;
+	}
+	.headerContainer{
+		font-size: 1rem;
+	}
 }
