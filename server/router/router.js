@@ -1,8 +1,8 @@
 import express from "express";
-import { sendHome } from "../controller/controller.js";
+import { getAllTodo } from "../controller/controller.js";
 const route = express.Router()
 
-route.get('/home', sendHome)
+route.get('/todo', getAllTodo)
 
 
 export default route;

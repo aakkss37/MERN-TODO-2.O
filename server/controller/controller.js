@@ -1,4 +1,4 @@
-// import reBuild_ToDo from "../models/todoModule.js";
+import reBuild_ToDo from "../models/todoModule.js";
 const todoArr = [
 	{
 		_id: "skajhdxi827323hei7hd2189dy98d4r",
@@ -25,8 +25,13 @@ const todoArr = [
 		done: false
 	},
 ]
-export const sendHome = (request, responce)=>{
-	console.log("request comming ---> /home");
-	// const homeContent = "Hi this is from home page"
-	responce.status(200).json(todoArr)
+export const getAllTodo = async (request, responce) => {
+	console.log("request comming ---> /todo");
+	try {
+		const allTodo = await reBuild_ToDo.find({}).sort({"crreatedAt": -1});
+		return responce.status(200).json(allTodo)
+	} catch (error) {
+		console.log("error in fatching allTodo ----> ", error.message);
+		return responce.status(500).json(error.message);
+	};
 }
