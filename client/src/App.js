@@ -6,13 +6,13 @@ import ToDoForm from './components/ToDoForm';
 function App () {
 	return (
 		<div className="App">
-			<div className='header'>
+			<div className='headerContainer'>
 				<Header />
 			</div>
-			<div className='form'>
+			<div className='formConatiner'>
 				<ToDoForm/>
 			</div>
-			<div className='display-todo'>
+			<div className='todoContainer'>
 				<DisplayToDo/>
 			</div>
 		</div>
