@@ -7,7 +7,7 @@ import cors from "cors";
 const app = express();
 app.use(bodyParser.json({limit:"30mb", extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb", extended:true}));
-// app.use(cors);
+app.use(cors());
 
 
 
@@ -23,8 +23,9 @@ app.use('/', route);
 
 
 
+
 // PORT LISTENING
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, ()=>{
 	console.log(`App is running on port ---> ${PORT}`);
 })

@@ -1,34 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ToDoList from './ToDoList';
+import {useDispatch, useSelector} from 'react-redux';
+import { getAllTodo } from '../redux/actions/action';
 
-const todoArr = [
-	{
-		_id:"skajhdxi827323hei7hd2189dy98d4r",
-		data: "Task 1",
-		createdAt: Date.now(),
-		done: false
-	},
-	{
-		_id:"skajhdxi827323hei7hd21efh834fr",
-		data: "Task 2",
-		createdAt: Date.now(),
-		done: false
-	},
-	{
-		_id:"skajhdxi827323hei7hd21i3u4fdf3",
-		data: "Task 3",
-		createdAt: Date.now(),
-		done: false
-	},
-	{
-		_id:"skajhdxi827323hei7hd3fcj938434j",
-		data: "Task 4",
-		createdAt: Date.now(),
-		done: false
-	},
-]
+
 const DisplayToDo = () => {
-	const allToDo = todoArr.map((todo)=>(
+
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getAllTodo())
+	}, [dispatch]);
+
+	const allToDo = useSelector(state=>state.todos)
+	console.log("all todo ----> ", allToDo)
+	const todoList = allToDo.map((todo)=>(
 		<ToDoList
 			key={todo._id}
 			_id={todo._id}
@@ -39,7 +25,7 @@ const DisplayToDo = () => {
 	));
 	return (
 		<div className='todoList'>
-			{allToDo}
+			{todoList}
 		</div>
 	)
 }
