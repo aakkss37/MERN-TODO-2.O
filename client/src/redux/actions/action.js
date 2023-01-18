@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Add_New_Todo, Delete_Todo, Get_All_Todo, Toggle_Todo} from './dispatchType.js'
+import {Add_New_Todo, Delete_Todo, Get_All_Todo, Toggle_Todo, Update_Todo} from './dispatchType.js'
 
 const API_URL = "http://localhost:8000";
 
@@ -57,8 +57,8 @@ export const updateTodo = (_id, editedData)=> async(dispatch)=>{
 	console.log("editedData---> ",editedData);
 	try {
 		const responce = await axios.put(`${API_URL}/todo/${_id}/update`, {data: editedData});
-
-		console.log(responce);
+		// console.log(responce);
+		dispatch({ type: Update_Todo, payload: responce.data});
 	} catch (error) {
 		console.log("Error while calling updateTodo API ----> ", error.message)
 	}
