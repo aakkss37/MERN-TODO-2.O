@@ -64,6 +64,16 @@ body * {
 .todoData:hover{
 	background-color: rgb(255, 210, 210);
 }
+.done{
+	background-color: rgb(114, 114, 114);
+	text-decoration: line-through;
+	color: rgb(49, 49, 49);
+}
+.done:hover {
+	background-color: rgb(114, 114, 114);
+	text-decoration: line-through;
+	color: rgb(49, 49, 49);
+}
 .action{
 	padding: 2px;
 }

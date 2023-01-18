@@ -13,7 +13,7 @@ const DisplayToDo = () => {
 	}, [dispatch]);
 
 	const allToDo = useSelector(state=>state.todos)
-	console.log("all todo ----> ", allToDo)
+	// console.log("all todo ----> ", allToDo)
 	const todoList = allToDo.map((todo)=>(
 		<ToDoList
 			key={todo._id}
