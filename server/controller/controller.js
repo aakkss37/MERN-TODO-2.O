@@ -50,7 +50,7 @@ export const toggleTodo = async (request, responce)=>{
 
 
 export const deleteTodo = async(request, responce)=>{
-	console.log("request received ---> /todo/:id/delete" );
+	// console.log("request received ---> /todo/:id/delete" );
 	try {
 		await ToDo.deleteOne({_id: request.params.id});
 		const newList = await ToDo.find({}).sort({ "crreatedAt": -1 });

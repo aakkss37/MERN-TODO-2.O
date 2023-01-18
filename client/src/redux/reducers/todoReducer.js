@@ -21,6 +21,12 @@ export const todosReducer = (state = [], action) => {
 			console.log("updatedTodo -----> ", updatedState);
 			return updatedState;
 
+
+		case dispatchActionType.Delete_Todo:
+			// console.log("todoReducer call action type------>", action.type);
+			// console.log("todoReducer call action payload------>", action.payload);
+			return action.payload;
+
 		default:
 			return state;
 	}

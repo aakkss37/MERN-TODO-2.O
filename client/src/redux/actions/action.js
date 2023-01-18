@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Add_New_Todo, Get_All_Todo, Toggle_Todo} from './dispatchType.js'
+import {Add_New_Todo, Delete_Todo, Get_All_Todo, Toggle_Todo} from './dispatchType.js'
 
 const API_URL = "http://localhost:8000";
 
@@ -43,8 +43,8 @@ export const deleteTodo = (_id)=> async (dispatch)=>{
 	// console.log("action dispatch --> toggle done: true/false ---> ");
 	try {
 		const responce = await axios.delete(`${API_URL}/todo/${_id}/delete`);
-		console.log("after delete ---> ", responce.data);
-		// dispatch({ type: Toggle_Todo, payload: responce.data });
+		// console.log("after delete ---> ", responce.data);
+		dispatch({ type: Delete_Todo, payload: responce.data });
 	} catch (error) {
 		console.log("Error while calling deleteTodo API ----> ", error.message)
 	}
