@@ -8,8 +8,12 @@ const ToDoList = (props) => {
 	const [editedInput, setEditedInput] = useState(props.data);
 	const dispatch = useDispatch();
 
-	const editFormSubmitHandler = () => { };
-	const editedInputChangeHandler = () => { };
+	const editFormSubmitHandler = (e) => { 
+		e.preventDefault();
+	};
+	const editedInputChangeHandler = (e) => {
+		setEditedInput(e.target.value);
+	};
 	const editTodoHandler = () => {
 		setEditing(!editing);
 	}
@@ -26,6 +30,7 @@ const ToDoList = (props) => {
 	const editForm = (
 		<form onSubmit={editFormSubmitHandler}>
 			<input
+				className='editinput'
 				type="text"
 				value={editedInput}
 				onChange={editedInputChangeHandler}
@@ -36,7 +41,7 @@ const ToDoList = (props) => {
 	const className = `data ${props.done && "done"}`;
 	return (
 		<div className="todoData">
-			<div className={className} onClick={toggelTodoHandler}>
+			<div className={className} onClick={editing ? ()=>{} : toggelTodoHandler}>
 				{
 					editing ? editForm : <p>{props.data}</p>
 				}

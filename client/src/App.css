@@ -100,7 +100,17 @@ body * {
 }
 
 .icon:hover i {
-	color: white;
+	color: rgb(114, 114, 114);
+}
+
+.editinput{
+	background-color: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid rgb(27, 0, 0);
+	width: 90%;
+	font-size: 1.4rem;
+	color: rgb(27, 0, 0);
 }
 
 @media screen and (max-width: 820px) {
