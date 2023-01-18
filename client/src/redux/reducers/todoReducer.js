@@ -18,7 +18,7 @@ export const todosReducer = (state = [], action) => {
 			const updatedState = state.map((todo)=>(
 				todo._id === action.payload._id ? {...todo, done: !todo.done} : todo
 			));
-			console.log("updatedTodo -----> ", updatedState);
+			// console.log("updatedTodo -----> ", updatedState);
 			return updatedState;
 
 

@@ -11,7 +11,7 @@ const ToDoList = (props) => {
 	const deleteItemHandler = ()=>{
 		dispatch(deleteTodo(props._id));
 	}
-	const className = `${props.done && "done"}`;
+	const className = `data ${props.done && "done"}`;
 	return (
 		<div className="todoData">
 			<div className={className} onClick={toggelTodoHandler}>
