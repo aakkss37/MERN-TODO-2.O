@@ -53,8 +53,8 @@ export const deleteTodo = (_id)=> async (dispatch)=>{
 
 
 export const updateTodo = (_id, editedData)=> async(dispatch)=>{
-	console.log("id---> ", _id);
-	console.log("editedData---> ",editedData);
+	// console.log("id---> ", _id);
+	// console.log("editedData---> ",editedData);
 	try {
 		const responce = await axios.put(`${API_URL}/todo/${_id}/update`, {data: editedData});
 		// console.log(responce);
