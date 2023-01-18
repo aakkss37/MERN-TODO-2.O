@@ -39,5 +39,17 @@ export const toggleTodo = (_id)=> async(dispatch)=>{
 };
 
 
+export const deleteTodo = (_id)=> async (dispatch)=>{
+	// console.log("action dispatch --> toggle done: true/false ---> ");
+	try {
+		const responce = await axios.delete(`${API_URL}/todo/${_id}/delete`);
+		// console.log("after toggle ---> ", responce.data);
+		// dispatch({ type: Toggle_Todo, payload: responce.data });
+	} catch (error) {
+		console.log("Error while calling deleteTodo API ----> ", error.message)
+	}
+};
+
+
+
 export const updateTodo = ()=>{};
-export const deleteTodo = ()=>{};

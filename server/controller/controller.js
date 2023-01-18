@@ -49,7 +49,16 @@ export const toggleTodo = async (request, responce)=>{
 }
 
 
-export const deleteTodo = ()=>{}
+export const deleteTodo = async(request, responce)=>{
+	console.log("request received ---> /todo/:id/delete" );
+	try {
+		const foundItem = await ToDo.deleteOne({_id: request.params.id});
+		console.log(foundItem);
+		
+	} catch (error) {
+		
+	}
+}
 
 
 // export const updateTodo = async(request, responce)=>{
