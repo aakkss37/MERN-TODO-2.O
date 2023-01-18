@@ -11,10 +11,12 @@ const ToDoList = (props) => {
 	const deleteItemHandler = ()=>{
 		dispatch(deleteTodo(props._id));
 	}
-	const className = `todoData ${props.done && "done"}`;
+	const className = `${props.done && "done"}`;
 	return (
-		<div className={className} onClick={toggelTodoHandler}>
+		<div className="todoData">
+			<div className={className} onClick={toggelTodoHandler}>
 			<p>{props.data}</p>
+			</div>
 			<div className='action'>
 				<span className='icon'>
 					<i className='fas fa-pen' />
