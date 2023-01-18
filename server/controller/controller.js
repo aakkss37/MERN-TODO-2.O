@@ -52,11 +52,12 @@ export const toggleTodo = async (request, responce)=>{
 export const deleteTodo = async(request, responce)=>{
 	console.log("request received ---> /todo/:id/delete" );
 	try {
-		const foundItem = await ToDo.deleteOne({_id: request.params.id});
-		console.log(foundItem);
-		
+		await ToDo.deleteOne({_id: request.params.id});
+		const newList = await ToDo.find({}).sort({ "crreatedAt": -1 });
+		responce.status(200).json(newList);
 	} catch (error) {
-		
+		console.log("error in delete item ----> ", error.message);
+		return responce.status(500).json(error.message);
 	}
 }
 
