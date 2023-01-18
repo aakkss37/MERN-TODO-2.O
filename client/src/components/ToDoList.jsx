@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { toggleTodo, deleteTodo } from '../redux/actions/action.js';
+import { toggleTodo, deleteTodo, updateTodo } from '../redux/actions/action.js';
 
 const ToDoList = (props) => {
 	const [editing, setEditing] = useState(false);
@@ -10,6 +10,7 @@ const ToDoList = (props) => {
 
 	const editFormSubmitHandler = (e) => { 
 		e.preventDefault();
+		dispatch(updateTodo(props._id, editedInput));
 	};
 	const editedInputChangeHandler = (e) => {
 		setEditedInput(e.target.value);

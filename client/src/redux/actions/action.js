@@ -52,4 +52,13 @@ export const deleteTodo = (_id)=> async (dispatch)=>{
 
 
 
-export const updateTodo = ()=>{};
+export const updateTodo = (_id, editedData)=> async(dispatch)=>{
+	console.log("id---> ", _id);
+	console.log("editedData---> ",editedData);
+	try {
+		const responce = await axios.put(`${API_URL}/todo/${_id}/update`);
+		console.log(responce);
+	} catch (error) {
+		console.log("Error while calling updateTodo API ----> ", error.message)
+	}
+};

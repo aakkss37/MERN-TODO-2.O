@@ -62,20 +62,20 @@ export const deleteTodo = async(request, responce)=>{
 }
 
 
-// export const updateTodo = async(request, responce)=>{
-// 	console.log("request received ---> /todo/:id/update");
-// 	try {
-// 		const updateItem = await ToDo.findByIdAndUpdate(
-// 			{_id: request.param.id},
-// 			{data: request.body.data}	
-// 		);
-// 		console.log("before ---> ", updateItem.data);
-// 		await updateItem.save();
-// 		const updatedItem = await ToDo.findById(request.params.id);
-// 		return responce.status(200).json(updatedItem);
-// 	} catch (error) {
-// 		console.log("error in updating todo ----> ", error.message);
-// 		return responce.status(500).json(error.message);
-// 	}
-// }
+export const updateTodo = async(request, responce)=>{
+	console.log("request received ---> /todo/:id/update");
+	// try {
+	// 	const updateItem = await ToDo.findByIdAndUpdate(
+	// 		{_id: request.param.id},
+	// 		{data: request.body.data}	
+	// 	);
+	// 	console.log("before ---> ", updateItem.data);
+	// 	await updateItem.save();
+	// 	const updatedItem = await ToDo.findById(request.params.id);
+	// 	return responce.status(200).json(updatedItem);
+	// } catch (error) {
+	// 	console.log("error in updating todo ----> ", error.message);
+	// 	return responce.status(500).json(error.message);
+	// }
+}
 
