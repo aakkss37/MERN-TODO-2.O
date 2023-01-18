@@ -70,7 +70,6 @@ export const updateTodo = async(request, responce)=>{
 			{_id: request.params.id},
 			{data: request.body.data}	
 		);
-		console.log("before ---> ", updateItem.data);
 		await updateItem.save();
 		const updatedItem = await ToDo.findById(request.params.id);
 		return responce.status(200).json(updatedItem);

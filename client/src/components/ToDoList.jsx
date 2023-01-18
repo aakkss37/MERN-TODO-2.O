@@ -11,6 +11,7 @@ const ToDoList = (props) => {
 	const editFormSubmitHandler = (e) => { 
 		e.preventDefault();
 		dispatch(updateTodo(props._id, editedInput));
+		setEditing(false)
 	};
 	const editedInputChangeHandler = (e) => {
 		setEditedInput(e.target.value);

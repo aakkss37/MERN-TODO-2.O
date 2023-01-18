@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {Add_New_Todo, Delete_Todo, Get_All_Todo, Toggle_Todo, Update_Todo} from './dispatchType.js'
 
-const API_URL = "http://localhost:8000";
+const API_URL = "http://localhost:8000/todo";
 
 
 export const getAllTodo = () => async(dispatch)=>{

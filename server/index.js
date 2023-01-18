@@ -19,7 +19,7 @@ mongooseConnention();
 
 // ROUTES
 import route from "./router/router.js";
-app.use('/', route);
+app.use('/todo', route);
 
 
 
